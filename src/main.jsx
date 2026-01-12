@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './page/Home.jsx'
 import Favorites from './page/Favorites.jsx'
 import MealPlanner from './page/MealPlanner.jsx'
+import { DataProvider } from './context/DataProvider.jsx'
 
 
 const router = createBrowserRouter([
@@ -31,7 +32,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <DataProvider>
     <RouterProvider router={router} />
-    
+    </DataProvider>
   </StrictMode>,
 )

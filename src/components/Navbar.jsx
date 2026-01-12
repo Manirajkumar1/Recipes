@@ -2,15 +2,16 @@ import { NavLink } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { AiOutlineSun } from "react-icons/ai";
 import { MdDarkMode } from "react-icons/md";
-import { IoIosSearch } from "react-icons/io";
-import { useState } from "react";
+import {useState } from "react";
 
 function Navbar() {
   const [themeMode, setThemeMode] = useState(true)
-
+ 
   const themeChanger = () => {
     setThemeMode(!themeMode)
   }
+  
+
   return (
     <div className=" flex justify-between px-10 py-3 bg-green-400">
       <div className="w-10">
@@ -45,9 +46,12 @@ function Navbar() {
           >Mealplanner</NavLink>
         </li>
       </ul>
-      <button onClick={themeChanger}>
+      <button 
+      className=""
+      onClick={themeChanger}
+      >
         {
-          themeMode ? <AiOutlineSun/> : <MdDarkMode/>
+          themeMode ? <AiOutlineSun className="text-xl"/> : <MdDarkMode/>
         }
       </button>
     </div>
