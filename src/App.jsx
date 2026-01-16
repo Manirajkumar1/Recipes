@@ -10,8 +10,8 @@ function App() {
     <div className='fixed w-full top-0'>
       <Navbar/>
     </div>
-      
-      <Outlet/>
+       <Outlet/>
+     
     </>
   )
 }

@@ -2,7 +2,7 @@
 function Favorites() {
   return (
     <div>
-      <h1>Hello</h1>
+      <h1 className="text-red-300">Hello</h1>
     </div>
   )
 }

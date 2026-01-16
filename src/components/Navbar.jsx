@@ -13,7 +13,7 @@ function Navbar() {
   
 
   return (
-    <div className=" flex justify-between px-10 py-3 bg-green-400">
+    <div className=" w-full flex justify-between px-5 py-3 bg-green-400">
       <div className="w-10">
         <img src={logo} alt="" className="w-full" />
       </div>
@@ -46,7 +46,8 @@ function Navbar() {
           >Mealplanner</NavLink>
         </li>
       </ul>
-      <button 
+      <div>
+        <button 
       className=""
       onClick={themeChanger}
       >
@@ -54,6 +55,7 @@ function Navbar() {
           themeMode ? <AiOutlineSun className="text-xl"/> : <MdDarkMode/>
         }
       </button>
+      </div>
     </div>
   );
 }

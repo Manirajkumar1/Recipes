@@ -3,6 +3,7 @@ import DataContext from "./DataContext";
 
 export const DataProvider = ({children}) => {
     const [recipesData, setRecipesData] = useState([]);
+    const [loding, setLoading] = useState(true)
     
       
       useEffect(() => {
@@ -13,13 +14,15 @@ export const DataProvider = ({children}) => {
           setRecipesData(resData.recipes || []);
         } catch (error) {
           console.log(error);
+        } finally {
+          setLoading(false)
         }
       };
         fetchData();
       }, []);
 
       return(
-        <DataContext.Provider value={{recipesData}}>
+        <DataContext.Provider value={{recipesData, loding}}>
           {children}
         </DataContext.Provider>
       )
