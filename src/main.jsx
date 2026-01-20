@@ -7,6 +7,7 @@ import Home from './page/Home.jsx'
 import Favorites from './page/Favorites.jsx'
 import MealPlanner from './page/MealPlanner.jsx'
 import { DataProvider } from './context/DataProvider.jsx'
+import RecipesDetails from './components/RecipesDetails.jsx'
 
 
 const router = createBrowserRouter([
@@ -15,15 +16,19 @@ const router = createBrowserRouter([
     element: <App/>,
     children: [
       {
-        path: "/",
+        index: true,
         element: <Home/>
       },
       {
-        path: "/favorites",
+        path: "/recipe/:id",
+        element: <RecipesDetails/>
+      },
+      {
+        path: "favorites",
         element: <Favorites/>
       },
       {
-        path: "/mealplanner",
+        path: "mealplanner",
         element: <MealPlanner/>
       },
     ]

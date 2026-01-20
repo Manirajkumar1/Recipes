@@ -1,15 +1,17 @@
-// import { useContext } from "react";
+
+import { useContext } from "react";
 import Recipes from "./Recipes";
 import RecipesSkeleton from "./RecipesSkeleton";
+import DataContext from "../context/DataContext";
 
-function RecipesCard({recipes, loading}) {
+function RecipesCard({recipes}) {
+  const {loading} = useContext(DataContext)
 
    if (loading) {
     return <RecipesSkeleton />;
   }
-
-  if (!recipes || recipes.length === 0) {
-    return <p>no found</p>;
+  if (!recipes) {
+    return <p>no recipes found</p>;
   }
 
   return (
