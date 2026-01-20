@@ -23,7 +23,7 @@ function Navbar() {
           to="/"
           className={({isActive}) => 
             
-          isActive ? " text-sky-800 font-bold underline" : "text-sky-800 font-bold"
+          isActive ? "text-sky-900 font-bold underline decoration-orange-600" : "text-sky-800 font-bold"
           }
           >Home</NavLink>
         </li>
@@ -32,7 +32,7 @@ function Navbar() {
           to="/favorites"
           className={({isActive}) => 
             
-          isActive ? " text-sky-800 font-bold underline" : "text-sky-800 font-bold"
+          isActive ? " text-sky-900 font-bold underline decoration-orange-600" : "text-sky-800 font-bold"
           }
           >Favorites</NavLink>
         </li>
@@ -41,7 +41,7 @@ function Navbar() {
           to="/mealplanner"
           className={({isActive}) => 
             
-          isActive ? " text-sky-800 font-bold underline" : "text-sky-800 font-bold"
+          isActive ? " text-sky-900 font-bold underline decoration-orange-600" : "text-sky-800 font-bold"
           }
           >Mealplanner</NavLink>
         </li>
