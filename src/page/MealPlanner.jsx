@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Accordian from '../components/Accordian'
 
 function MealPlanner() {
+  const [activeId, setActiveId] = useState(false)
   return (
-    <div>MealPlanner</div>
+    <div>
+      <Accordian activeId={activeId}  setActiveId={setActiveId}/>
+    </div>
   )
 }
 

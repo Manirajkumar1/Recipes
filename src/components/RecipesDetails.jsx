@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import RecipesSkeleton from "./RecipesSkeleton";
 
 function RecipeDetails() {
-  const { id } = useParams();          // URL se id
+  const { id } = useParams();          
   const [recipe, setRecipe] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -25,36 +25,55 @@ function RecipeDetails() {
 
   if (loading) return <RecipesSkeleton/>;
 
-  if (!recipe) return <p className="text-center mt-10">Recipe not found</p>;
-
   return (
     <div className="max-w-4xl mx-auto p-5">
       <h1 className="text-3xl font-bold mb-4">{recipe.name}</h1>
 
-      <img
+      <div className="flex gap-20">
+        <div className="w-96">
+        <img
         src={recipe.image}
-        alt={recipe.name}
-        className="w-full h-80 object-cover rounded-lg mb-5"
+        className="w-full  object-cover rounded-lg mb-5"
       />
 
-      <p className="mb-3">
+      </div>
+      {/* Ingredients */}
+      <div className="">
+        <h2 className="text-xl font-semibold mb-2">Ingredients</h2>
+      <ul className="list-disc pl-5 space-y-1">
+        {recipe.ingredients.map((item, index) => (
+          <li 
+          key={index}>{item}</li>
+        ))}
+      </ul>
+      </div>
+      </div>
+      <div className="flex flex-col gap-3 mb-8 ">
+        <p className="">
         <strong>Cuisine:</strong> {recipe.cuisine}
       </p>
 
-      <p className="mb-3">
+      <p className="">
         <strong>Difficulty:</strong> {recipe.difficulty}
       </p>
 
-      <p className="mb-5">
+      <p className="">
         <strong>Prep Time:</strong> {recipe.prepTimeMinutes} minutes
       </p>
-
-      <h2 className="text-xl font-semibold mb-2">Instructions</h2>
-      <ul className="list-disc pl-5 space-y-1">
-        {recipe.instructions.map((step, index) => (
-          <li key={index}>{step}</li>
-        ))}
-      </ul>
+      </div>
+      {/* instructions */}
+      <div className="ml-4">
+        <h1 className="text-xl font-semibold mb-2">Instructions</h1>
+        <ul className="ml-2">
+          {
+            recipe.instructions.map((item, index) => (
+              <li 
+              className="list-disc"
+              key={index}>{item}</li>
+            ))
+          }
+        </ul>
+      </div>
     </div>
   );
 }

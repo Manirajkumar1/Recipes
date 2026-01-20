@@ -13,7 +13,7 @@ function Navbar() {
   
 
   return (
-    <div className=" w-full flex justify-between px-5 py-3 bg-green-400">
+    <div className=" w-full flex justify-between px-5 py-3 bg-orange-400">
       <div className="w-10">
         <img src={logo} alt="" className="w-full" />
       </div>
@@ -23,7 +23,7 @@ function Navbar() {
           to="/"
           className={({isActive}) => 
             
-          isActive ? "text-sky-900 font-bold underline decoration-orange-600" : "text-sky-800 font-bold"
+          isActive ? "text-white font-bold underline decoration-green-400 underline-offset-4" : "text-white font-bold"
           }
           >Home</NavLink>
         </li>
@@ -32,7 +32,7 @@ function Navbar() {
           to="/favorites"
           className={({isActive}) => 
             
-          isActive ? " text-sky-900 font-bold underline decoration-orange-600" : "text-sky-800 font-bold"
+          isActive ? " text-white font-bold underline decoration-green-400 underline-offset-4" : "text-white font-bold"
           }
           >Favorites</NavLink>
         </li>
@@ -41,7 +41,7 @@ function Navbar() {
           to="/mealplanner"
           className={({isActive}) => 
             
-          isActive ? " text-sky-900 font-bold underline decoration-orange-600" : "text-sky-800 font-bold"
+          isActive ? " text-white font-bold underline decoration-green-400 underline-offset-4" : "text-white font-bold"
           }
           >Mealplanner</NavLink>
         </li>
